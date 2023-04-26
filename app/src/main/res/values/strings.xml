@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LutemonFighter</string>
+    <string name="add_new_lutemon">Add New Lutemon</string>
+    <string name="list_lutemons">My Lutemons</string>
+    <string name="select_arena_lutemons">Battlefield</string>
+    <string name="training">Training</string>
+</resources>

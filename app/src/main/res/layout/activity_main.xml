@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnAddLutemon"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:onClick="switchToAddLutemonActivity"
+        android:text="Add new Lutemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnSave" />
+
+    <Button
+        android:id="@+id/btnShowLutemon"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:onClick="switchToListLutemonsActivity"
+        android:text="Show All Lutemons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddLutemon" />
+
+    <Button
+        android:id="@+id/btnGoToBattleArena"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:onClick="switchToBattlefieldActivity"
+        android:text="Battle Arena"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowLutemon" />
+
+    <Button
+        android:id="@+id/btnGoToTrain"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:onClick="switchToTrainingActivity"
+        android:text="Train Lutemons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoToBattleArena" />
+
+    <ImageButton
+        android:id="@+id/imgbtnSave"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Save_Lutemons"
+        android:onClick="saveLutemons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_save_24" />
+
+    <ImageButton
+        android:id="@+id/imgbtnLoad"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="Load_Lutemons"
+        android:onClick="loadLutemons"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddLutemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnSave"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.571"
+        app:srcCompat="@drawable/baseline_upload_file_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
