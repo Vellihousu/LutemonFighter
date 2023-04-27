@@ -34,6 +34,7 @@ public class AddNewLutemonActivity extends AppCompatActivity implements AdapterV
         context = this;
     }
 
+    // Method for adding new lutemon by its color
     public void addNewLutemon (View view) {
 
         String lutemonName = ptName.getText().toString();
@@ -69,6 +70,7 @@ public class AddNewLutemonActivity extends AppCompatActivity implements AdapterV
         }
     }
 
+    // Method for getting lutemon type by its radiobutton
     public String getLutemonColor (View view) {
         int radioButtonId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(radioButtonId);

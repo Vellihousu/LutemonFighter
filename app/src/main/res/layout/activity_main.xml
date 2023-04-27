@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HomeActivity">
 
     <Button
         android:id="@+id/btnAddLutemon"
         android:layout_width="260dp"
         android:layout_height="60dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:onClick="switchToAddLutemonActivity"
         android:text="Add new Lutemon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbtnSave" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSave" />
 
     <Button
         android:id="@+id/btnShowLutemon"
@@ -58,8 +58,8 @@
         android:id="@+id/imgbtnSave"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="28dp"
         android:contentDescription="Save_Lutemons"
         android:onClick="saveLutemons"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,15 +70,38 @@
         android:id="@+id/imgbtnLoad"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
         android:contentDescription="Load_Lutemons"
         android:onClick="loadLutemons"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddLutemon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toEndOf="@+id/imgbtnSave"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571"
         app:srcCompat="@drawable/baseline_upload_file_24" />
+
+    <TextView
+        android:id="@+id/tvSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="4dp"
+        android:text="Save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnSave" />
+
+    <TextView
+        android:id="@+id/tvLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Load"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddLutemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toEndOf="@+id/tvSave"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnLoad"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class TrainingActivity extends AppCompatActivity {
+public class TrainingAreaActivity extends AppCompatActivity {
 
     private LinearLayout listOfLutemons;
     private Button trainButton;
@@ -58,22 +58,19 @@ public class TrainingActivity extends AppCompatActivity {
                     }
                     train(trainingLutemons);
                     trainingLutemons.clear();
-                    createCheckBoxesForLutemons();
+                    //createCheckBoxesForLutemons();
                     checkedCheckboxes.clear();
                 }
             }
         });
     }
 
+    // Method for training selected Lutemons.
     private void train(ArrayList<Lutemon> trainingLutemons) {
         int trainExp = 1;
         StringBuilder stringBuilder = new StringBuilder();
         trainlog.setText("");
         for  (Lutemon lutemon : trainingLutemons) {
-            stringBuilder.append(lutemon.getName() + " (" + lutemon.getColor() + ") " + "att: "
-                    + lutemon.getAttack() + "; def: " + lutemon.getDefence() + "; exp: "
-                    + lutemon.getExperience() + "; health: " + lutemon.getHealth() + "/"
-                    + lutemon.getMaxHealth() + "\n");
             lutemon.setExperience(trainExp);
             lutemon.setStats(trainExp);
             stringBuilder.append(lutemon.getName() + " (" + lutemon.getColor()
@@ -88,6 +85,7 @@ public class TrainingActivity extends AppCompatActivity {
         trainlog.setText(stringBuilder);
     }
 
+    // Method for creating checkboxes for lutemons to select from.
     private void createCheckBoxesForLutemons() {
         CheckBox checkBox;
         lutemonsOnTraining = Storage.getInstance().getLutemonsToBattlefield();

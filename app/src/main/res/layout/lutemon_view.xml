@@ -2,16 +2,23 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="360dp"
+    android:layout_height="230dp"
     android:layout_marginTop="5dp"
-    android:background="#00BCD4"
+    android:background="#8867C4"
     android:orientation="horizontal">
 
 
+    <ImageView
+        android:id="@+id/ivLutemonPicture"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="10dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#8867C4"
         android:orientation="vertical">
 
@@ -29,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lutemon's color"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtAttack"
@@ -57,6 +64,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Experience"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvWins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total wins"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvLoses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total loses"
             android:textSize="20sp" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

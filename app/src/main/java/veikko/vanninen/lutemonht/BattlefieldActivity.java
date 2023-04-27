@@ -26,6 +26,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battlefield);
+
         // Set name for header.
         getSupportActionBar().setTitle(R.string.select_arena_lutemons);
 
@@ -74,7 +75,9 @@ public class BattlefieldActivity extends AppCompatActivity {
 
         for (Lutemon lutemon : lutemonsOnBattlefield) {
             checkBox = new CheckBox(this);
-            checkBox.setText(lutemon.getName() + " (" + lutemon.getColor() + ")");
+            checkBox.setText(lutemon.getName() + " (" + lutemon.getColor() + ")" + " Att: "
+                    + lutemon.getAttack() + " Def: " + lutemon.getDefence() + " HP: "
+                    + lutemon.getHealth() + "/" + lutemon.getMaxHealth());
             checkBox.setId(i++);
             listOfLutemons.addView(checkBox);
             checkBoxes.add(checkBox);
@@ -85,10 +88,15 @@ public class BattlefieldActivity extends AppCompatActivity {
     private void fight (ArrayList<Lutemon> fightingLutemon) {
         //Draw random starter Lutemon
         Collections.shuffle(fightingLutemon);
-
         Lutemon firstLutemon = fightingLutemon.get(0);
         Lutemon secondLutemon = fightingLutemon.get(1);
+
+        // Set how many experience points winner gets
         int winnerExp = 2;
+
+        // Set winner and loser lutemon.
+        int win = 1;
+        int loss = 1;
 
         StringBuilder stringBuilder = new StringBuilder();
         battleLog.setText("");
@@ -116,9 +124,18 @@ public class BattlefieldActivity extends AppCompatActivity {
             } else {
                 stringBuilder.append(secondLutemon.getName() + " (" + secondLutemon.getColor()
                         + ")" + " gets killed." + "\n");
-                Storage.getInstance().deleteLutemon(secondLutemon.getId());
+                stringBuilder.append(firstLutemon.getName() + " (" + firstLutemon.getColor() +
+                        ") wins the battle." + "\n");
+                //Lutemon deleted if dies.
+                //Storage.getInstance().deleteLutemon(secondLutemon.getId());
                 firstLutemon.setExperience(winnerExp);
                 firstLutemon.setStats(winnerExp);
+                firstLutemon.setWin(win);
+                secondLutemon.setLoss(loss);
+                stringBuilder.append(firstLutemon.getName() + " (" + firstLutemon.getColor()
+                        + ") has " + firstLutemon.getWins() + " wins total." + "\n");
+                stringBuilder.append(secondLutemon.getName() + " (" + secondLutemon.getColor()
+                        + ") has " + secondLutemon.getLoses() + " loses total." + "\n");
                 stringBuilder.append(firstLutemon.getName() + " (" + firstLutemon.getColor()
                         + ") gains " + winnerExp + " experience points." + "\n");
                 stringBuilder.append(firstLutemon.getName() + " (" + firstLutemon.getColor()
@@ -128,7 +145,7 @@ public class BattlefieldActivity extends AppCompatActivity {
                         + firstLutemon.getMaxHealth() + "\n");
                 break;
             }
-            //Perform same to second Lutemon
+            //Second Lutemon attacks
             stringBuilder.append(secondLutemon.getName() + " (" + secondLutemon.getColor()
                     + ") " + "attacks " + firstLutemon.getName() + " ("
                     + firstLutemon.getColor() + ") " + "\n");
@@ -144,9 +161,19 @@ public class BattlefieldActivity extends AppCompatActivity {
             } else {
                 stringBuilder.append(firstLutemon.getName() + " (" + firstLutemon.getColor()
                         + ")" + " gets killed." + "\n");
-                Storage.getInstance().deleteLutemon(firstLutemon.getId());
+                stringBuilder.append(secondLutemon.getName() + " (" + secondLutemon.getColor() +
+                        ") wins the battle." + "\n");
+
+                //Lutemon deleted id dies.
+                //Storage.getInstance().deleteLutemon(firstLutemon.getId());
                 secondLutemon.setExperience(winnerExp);
                 secondLutemon.setStats(winnerExp);
+                secondLutemon.setWin(win);
+                firstLutemon.setLoss(loss);
+                stringBuilder.append(secondLutemon.getName() + " (" + secondLutemon.getColor()
+                        + ") has " + secondLutemon.getWins() + " wins total." + "\n");
+                stringBuilder.append(firstLutemon.getName() + " (" + firstLutemon.getColor()
+                        + ") has " + firstLutemon.getLoses() + " loses total." + "\n");
                 stringBuilder.append(secondLutemon.getName() + " (" + secondLutemon.getColor()
                         + ") gains " + winnerExp + " experience points." + "\n");
                 stringBuilder.append(secondLutemon.getName() + " (" + secondLutemon.getColor()
@@ -164,5 +191,7 @@ public class BattlefieldActivity extends AppCompatActivity {
         }
         //Print battlelog to screen.
         battleLog.setText(stringBuilder);
+
+
     }
 }

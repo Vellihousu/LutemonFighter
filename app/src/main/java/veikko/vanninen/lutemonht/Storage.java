@@ -14,6 +14,7 @@ public class Storage {
     private Storage() {
     }
 
+    // Skeleton for storage class
     public static Storage getInstance() {
         if (storage == null) {
             storage = new Storage();
@@ -21,21 +22,27 @@ public class Storage {
         return storage;
     }
 
+    // Method for listing all existing Lutemons
     public ArrayList<Lutemon> getLutemonsToList() {
         return lutemons;
     }
+
+    //Method for getting lutemons to battlefield
     public ArrayList<Lutemon> getLutemonsToBattlefield() {
         return lutemons;
     }
+
     //Method for getting specific lutemon
     public Lutemon getLutemon (int id) {
         return lutemons.get(id);
     }
 
+    // Method for adding new Lutemon
     public void addLutemon(Lutemon lutemon) {
         lutemons.add(lutemon);
     }
 
+    // Method for deleting Lutemons
     public void deleteLutemon (int id) {
         int i = 0;
         for (Lutemon lutemon : lutemons) {

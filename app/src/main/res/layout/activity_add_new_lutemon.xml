@@ -6,64 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".AddNewLutemonActivity">
 
-    <RadioGroup
-        android:id="@+id/rgLutemonType"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:id="@+id/rbWhiteType"
+        <RadioGroup
+            android:id="@+id/rgLutemonType"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="White" />
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/rbGreenType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Green" />
+            <RadioButton
+                android:id="@+id/rbWhiteType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/white_lutemon_small"
+                android:text="White   (Att 5: Def 4: HP 20)" />
 
-        <RadioButton
-            android:id="@+id/rbPinkType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pink" />
+            <RadioButton
+                android:id="@+id/rbGreenType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/green_lutemon_small"
+                android:text="Green   (Att 6: Def 3: HP 19)" />
 
-        <RadioButton
-            android:id="@+id/rbOrangeType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Orange" />
+            <RadioButton
+                android:id="@+id/rbPinkType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/pink_lutemon_small"
+                android:text="Pink      (Att 7: Def 2: HP 18)" />
 
-        <RadioButton
-            android:id="@+id/rbBlackType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Black" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/rbOrangeType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/orange_lutemon_small"
+                android:text="Orange (Att 8: Def 1: HP 17)" />
+
+            <RadioButton
+                android:id="@+id/rbBlackType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/black_lutemon_small"
+                android:text="Black    (Att 9: Def 0: HP 16)" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddNewLutemon"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:onClick="addNewLutemon"
+        android:text="Add New Lutemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ptLutemonName" />
 
     <EditText
         android:id="@+id/ptLutemonName"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:ems="10"
-        android:hint="Add Lutemon's Name"
+        android:gravity="center"
+        android:hint="Give Lutemon's Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgLutemonType" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <Button
-        android:id="@+id/btnAddNewLutemon"
-        android:layout_width="320dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="12dp"
-        android:onClick="addNewLutemon"
-        android:text="Add New Lutemon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ptLutemonName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
